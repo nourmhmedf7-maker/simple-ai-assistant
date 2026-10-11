@@ -17,6 +17,7 @@ This project is part of my journey toward learning Python and AI Engineering. It
 
 - Python
 - Requests
+- python-dotenv
 - AI API
 - JSON
 - Object-Oriented Programming (OOP)
@@ -24,41 +25,53 @@ This project is part of my journey toward learning Python and AI Engineering. It
 ## Requirements
 
 - Python 3.10 or newer
-- An API key for the AI provider configured in the code
-- The `requests` Python library
+- An API key from the configured AI provider
+- The Python libraries listed in `requirements.txt`
 
 ## Installation
 
-**1. Clone the repository**
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/python-ai-assistant.git
-cd python-ai-assistant
+git clone https://github.com/nourmhmedf7-maker/simple-ai-assistant.git
+cd simple-ai-assistant
 ```
 
-Replace `YOUR-USERNAME` with your GitHub username.
-
-**2. Install dependencies**
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**3. Configure your API key**
+### 3. Configure your API key
 
-Set your API key in the `api_key` variable in `main.py`.
+Get your API key from [Google AI Studio](https://aistudio.google.com/).
 
-The current implementation uses the Google Gemini API. The project can be adapted to work with other AI providers by updating the API endpoint, request headers, and request body to match their APIs.
+Create a file named `.env` in the project directory and add the following line:
 
-**4. Run the application**
+```text
+GEMINI_API_KEY=your_api_key_here
+```
+
+Replace `your_api_key_here` with your own API key.
+
+**Important:** Never share your API key or upload your `.env` file to GitHub.
+
+Make sure your `.gitignore` file includes:
+
+```text
+.env
+```
+
+### 4. Run the application
 
 ```bash
-python main.py
+python "ai assistant.py"
 ```
 
 ## Usage
 
-Enter a message in the terminal and press Enter to receive a response from the AI model.
+Once the application starts, enter a message in the terminal and press Enter to receive a response from the AI model.
 
 Type `exit` to end the session.
 
@@ -70,6 +83,7 @@ Type `exit` to end the session.
 - Using `try` and `except` for error handling.
 - Applying loops and conditional statements.
 - Practicing Object-Oriented Programming (OOP).
+- Managing API keys through environment variables.
 
 ## Future Improvements
 

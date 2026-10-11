@@ -1,8 +1,12 @@
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+api_key = os.getenv("GEMINI_API_KEY")
 
 
-api_key = os.getenv("gemini_api_key")
 url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent"
 
 
@@ -44,7 +48,7 @@ def send_data(prompt):
         if response.status_code == 200:
             print(data["candidates"][0]["content"]["parts"][0]["text"])
             print("\n" + "─" * 48)
-            
+
         else:
             print(f"status code : {response.status_code}")
             print(data["error"]["message"])
