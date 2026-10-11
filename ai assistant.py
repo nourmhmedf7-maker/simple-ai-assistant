@@ -40,13 +40,14 @@ def send_data(prompt):
             json=body
         )
         data = response.json()
-
+        
         if response.status_code == 200:
             print(data["candidates"][0]["content"]["parts"][0]["text"])
             print("\n" + "─" * 48)
+            
         else:
             print(f"status code : {response.status_code}")
-            print(data)
+            print(data["error"]["message"])
 
     except KeyError:
         print("key not founded")
